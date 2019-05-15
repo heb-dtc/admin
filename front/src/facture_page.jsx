@@ -29,7 +29,23 @@ class FacturePage extends Component {
                     description: 'corso di design',
                     price: 6740
                 }
-            ]
+            ],
+            sender: {
+                name: 'Eugenia Morpurgo',
+                phone: '098765423',
+                email: 'eumorpurgo@gmail.com',
+                street: '2654/A Ponte dei scudi',
+                zipCode: '30122' ,
+                city: 'Venezia'
+            },
+            recipient: {
+                name: 'Florent NOEL',
+                phone: '098765423',
+                email: 'florent.noelfl@gmail.com',
+                street: '2654/A Ponte dei scudi',
+                zipCode: '30122' ,
+                city: 'Venezia'
+            }
         }
 
         this.handleChange = this.handleChange.bind(this)
@@ -40,24 +56,21 @@ class FacturePage extends Component {
     }
 
     render() {
-        const {transactions} = this.state
+        const {transactions, sender, recipient} = this.state
+        const {mode} = this.props
 
         return (
             <Container>
 
                 <Row>
                     <Col className='mt-4'>
-                        <Sender class='' name={'Eugenia Morpurgo'} phone={'098765423'} email={'eumorpurgo@gmail.com'}
-                                street={'2654/A Ponte dei scudi'}
-                                zipCode={'30122'} city={'Venezia'}/>
+                        <Sender sender={sender}/>
                     </Col>
                 </Row>
 
                 <Row>
                     <Col className='text-right mt-4'>
-                        <Recipient name={'Florent NOEL'} phone={'098765423'} email={'florent.noelfl@gmail.com'}
-                                   street={'2654/A Ponte dei scudi'}
-                                   zipCode={'30122'} city={'Venezia'}/>
+                        <Recipient recipient={recipient}/>
                     </Col>
                 </Row>
 
@@ -71,7 +84,7 @@ class FacturePage extends Component {
                     <Col>
                         <TransactionTable transactions={transactions}/>
                     </Col>
-                </Row>
+                </Row> 
 
                 <Row>
                     <Col className='mt-4'>

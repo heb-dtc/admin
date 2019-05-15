@@ -1,12 +1,12 @@
 import React from 'react'
 
-const Recipient = ({name, phone, email, street, zipCode, city}) => (
+const Recipient = ({recipient}) => (
     <div>
-        <p>{name}</p>
-        <p>{phone}</p>
-        <p>{email}</p>
-        <p>{street}</p>
-        <p>{zipCode} {city}</p>
+        <p>{recipient.name}</p>
+        <p>{recipient.phone}</p>
+        <p>{recipient.email}</p>
+        <p>{recipient.street}</p>
+        <p>{recipient.zipCode} {recipient.city}</p>
     </div>
 )
 
