@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Button, Col, Container, Row, Table } from 'reactstrap'
 import BankDetails from './bank_details.jsx'
 import FactureId from './facture_id.jsx'
 import Heading from './heading.jsx'
@@ -41,42 +42,72 @@ class FacturePage extends Component {
         const {transactions} = this.state
 
         return (
-            <div>
-                <Sender name={'Eugenia Morpurgo'} phone={'098765423'} email={'eumorpurgo@gmail.com'}
-                        street={'2654/A Ponte dei scudi'}
-                        zipCode={'30122'} city={'Venezia'}/>
+            <Container>
 
-                <br/><br/>
+                <Row>
+                    <Col className='mt-4'>
+                        <Sender class='' name={'Eugenia Morpurgo'} phone={'098765423'} email={'eumorpurgo@gmail.com'}
+                                street={'2654/A Ponte dei scudi'}
+                                zipCode={'30122'} city={'Venezia'}/>
+                    </Col>
+                </Row>
 
-                <Recipient name={'Florent NOEL'} phone={'098765423'} email={'florent.noelfl@gmail.com'}
-                           street={'2654/A Ponte dei scudi'}
-                           zipCode={'30122'} city={'Venezia'}/>
+                <Row>
+                    <Col className='text-right mt-4'>
+                        <Recipient name={'Florent NOEL'} phone={'098765423'} email={'florent.noelfl@gmail.com'}
+                                   street={'2654/A Ponte dei scudi'}
+                                   zipCode={'30122'} city={'Venezia'}/>
+                    </Col>
+                </Row>
 
-                <br/><br/>
+                <Row>
+                    <Col className='mt-4 mb-4'>
+                        <Heading number={1} date={'11-08-1988'}/>
+                    </Col>
+                </Row>
 
-                <Heading number={1} date={'11-08-1988'}/>
+                <Row>
+                    <Col>
+                        <Table bordered>
+                            <thead>
+                            <tr>
+                                <th>Transactions</th>
+                                <th className='text-right'>Price</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {
+                                transactions.map(transaction => {
+                                    return (
+                                        <tr>
+                                            <td key={transaction.description}>{transaction.description}</td>
+                                            <td className='text-right' key={transaction.price}>{transaction.price}</td>
+                                        </tr>
+                                    )
+                                })
+                            }
+                            </tbody>
+                        </Table>
+                    </Col>
+                </Row>
 
-                <table>
-                    <tbody>
-                    {
-                        transactions.map(transaction => {
-                            return (
-                                <tr>
-                                    <td key={transaction.description}>{transaction.description}</td>
-                                    <td key={transaction.price}>{transaction.price}</td>
-                                </tr>
-                            )
-                        })
-                    }
-                    </tbody>
-                </table>
+                <Row>
+                    <Col className='mt-4'>
+                        <FactureId id={'90987635243564758'}/>
+                    </Col>
+                </Row>
 
-                <br/><br/>
+                <Row>
+                    <Col className='mt-4'>
+                        <BankDetails name={'Caisse dEpargne'} iban={'IOUMD2793984KD&UE'} phone={'098786352'} city={'Clamecy'}
+                                     zipCode={'56210'}
+                                     street={'rue du moulin a eau'}/>
+                    </Col>
+                </Row>
 
-                <FactureId id={'90987635243564758'}/>
-                <BankDetails name={'Caisse dEpargne'} iban={'IOUMD2793984KD&UE'} phone={'098786352'} city={'Clamecy'} zipCode={'56210'}
-                             street={'rue du moulin a eau'}/>
-            </div>
+                <Button color="danger">Danger!</Button>
+
+            </Container>
         )
     }
 }
