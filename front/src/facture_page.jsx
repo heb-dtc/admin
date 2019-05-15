@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
-import { Button, Col, Container, Row, Table } from 'reactstrap'
+import { Col, Container, Row } from 'reactstrap'
 import BankDetails from './bank_details.jsx'
 import FactureId from './facture_id.jsx'
 import Heading from './heading.jsx'
 import Recipient from './recipient.jsx'
 import Sender from './sender.jsx'
+import TransactionTable from './transactions_table.jsx'
 
 class FacturePage extends Component {
     constructor() {
@@ -14,19 +15,19 @@ class FacturePage extends Component {
             transactions: [
                 {
                     description: 'corso di design',
-                    price: '990'
+                    price: 990
                 },
                 {
                     description: 'corso di design',
-                    price: '1990'
+                    price: 1990
                 },
                 {
                     description: 'corso di design',
-                    price: '456'
+                    price: 456
                 },
                 {
                     description: 'corso di design',
-                    price: '6740'
+                    price: 6740
                 }
             ]
         }
@@ -68,26 +69,7 @@ class FacturePage extends Component {
 
                 <Row>
                     <Col>
-                        <Table bordered>
-                            <thead>
-                            <tr>
-                                <th>Transactions</th>
-                                <th className='text-right'>Price</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            {
-                                transactions.map(transaction => {
-                                    return (
-                                        <tr>
-                                            <td key={transaction.description}>{transaction.description}</td>
-                                            <td className='text-right' key={transaction.price}>{transaction.price}</td>
-                                        </tr>
-                                    )
-                                })
-                            }
-                            </tbody>
-                        </Table>
+                        <TransactionTable transactions={transactions}/>
                     </Col>
                 </Row>
 
@@ -104,8 +86,6 @@ class FacturePage extends Component {
                                      street={'rue du moulin a eau'}/>
                     </Col>
                 </Row>
-
-                <Button color="danger">Danger!</Button>
 
             </Container>
         )
