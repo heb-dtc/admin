@@ -84,7 +84,7 @@ class FacturePage extends Component {
                     <Col>
                         <TransactionTable transactions={transactions}/>
                     </Col>
-                </Row> 
+                </Row>
 
                 <Row>
                     <Col className='mt-4'>
@@ -92,7 +92,7 @@ class FacturePage extends Component {
                     </Col>
                 </Row>
 
-                <Row>
+                <Row className='mb-5'>
                     <Col className='mt-4'>
                         <BankDetails name={'Caisse dEpargne'} iban={'IOUMD2793984KD&UE'} phone={'098786352'} city={'Clamecy'}
                                      zipCode={'56210'}
