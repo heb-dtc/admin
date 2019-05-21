@@ -3,8 +3,6 @@ export const getTotal = (transactions) => {
     transactions.map(transaction =>
         sum += transaction.price
     )
-    /*const sum = transactions.reduce((total, transaction) => total + transaction.price)*/
-    console.log(sum)
     return sum
 }
 

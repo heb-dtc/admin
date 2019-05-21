@@ -34,7 +34,7 @@ class AddTransactionRow extends React.Component {
 
     render() {
         const {description, price} = this.state
-        const {add} = this.props
+
         return (
             <tr>
                 <td>
