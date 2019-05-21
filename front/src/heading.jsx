@@ -1,5 +1,5 @@
 import React from 'react'
-import contentEditable from './editable_component.jsx'
+import contentEditable from './editable_component'
 
 const Heading = ({number, date}) => {
     const EditableNumber = contentEditable('span')

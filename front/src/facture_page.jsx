@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { Col, Container, Row } from 'reactstrap'
-import BankDetails from './bank_details.jsx'
-import FactureId from './facture_id.jsx'
-import Heading from './heading.jsx'
-import Recipient from './recipient.jsx'
-import Sender from './sender.jsx'
-import TransactionTable from './transactions_table.jsx'
+import BankDetails from './bank_details'
+import FactureId from './facture_id'
+import Heading from './heading'
+import Recipient from './recipient'
+import Sender from './sender'
+import TransactionTable from './transactions_table'
 
 class FacturePage extends Component {
     constructor() {

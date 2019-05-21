@@ -1,9 +1,9 @@
 import React from 'react'
 import { Table } from 'reactstrap'
-import { getTotal, getTotalTaxes, getTotalToPay } from './transactions_calculator.js'
-import contentEditable from "./editable_component.jsx";
+import { getTotal, getTotalTaxes, getTotalToPay } from './transactions_calculator'
+import contentEditable from "./editable_component";
 import Button from "reactstrap/es/Button";
-import AddTransactionRow from "./transaction/add_transaction_row.jsx";
+import AddTransactionRow from "./transaction/add_transaction_row";
 
 const TransactionTable = ({transactions, addTransaction, removeTransaction}) => {
     const EditableSpan = contentEditable('span')

@@ -1,5 +1,5 @@
 import React from 'react'
-import contentEditable from './editable_component.jsx'
+import contentEditable from './editable_component'
 
 class BankDetails extends React.Component {
 
