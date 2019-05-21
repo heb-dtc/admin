@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import { Col, Container, Row } from 'reactstrap'
 import BankDetails from './bank_details'
-import FactureId from './facture_id'
+import FactureId from './invoice_id'
 import Heading from './heading'
 import Recipient from './recipient'
 import Sender from './sender'
 import TransactionTable from './transactions_table'
 
-class FacturePage extends Component {
+class InvoicePage extends Component {
     constructor() {
         super()
 
@@ -102,4 +102,4 @@ class FacturePage extends Component {
     }
 }
 
-export default FacturePage
+export default InvoicePage

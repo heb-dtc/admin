@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Container, Nav, Navbar, NavbarBrand, NavItem, NavLink } from 'reactstrap'
-import FacturePage from './facture_page'
+import InvoicePage from './invoice_page'
 
 class App extends Component {
     constructor() {
@@ -11,14 +11,14 @@ class App extends Component {
         return (
             <Container>
                 <Navbar color="dark" className='text-white' expand="md">
-                    <NavbarBrand>facture</NavbarBrand>
+                    <NavbarBrand>invoice-maker</NavbarBrand>
                     <Nav className="ml-auto" navbar>
                         <NavItem>
-                            <NavLink>print facture</NavLink>
+                            <NavLink>print</NavLink>
                         </NavItem>
                     </Nav>
                 </Navbar>
-                <FacturePage />
+                <InvoicePage />
             </Container>
         )
     }
