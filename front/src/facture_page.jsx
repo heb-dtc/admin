@@ -13,22 +13,6 @@ class FacturePage extends Component {
 
         this.state = {
             transactions: [
-                {
-                    description: 'corso di design',
-                    price: 990
-                },
-                {
-                    description: 'corso di design',
-                    price: 1990
-                },
-                {
-                    description: 'corso di design',
-                    price: 456
-                },
-                {
-                    description: 'corso di design',
-                    price: 6740
-                }
             ],
             sender: {
                 name: 'Eugenia Morpurgo',
@@ -48,20 +32,32 @@ class FacturePage extends Component {
             }
         }
 
-        this.handleChange = this.handleChange.bind(this)
+        this.addTransaction = this.addTransaction.bind(this)
+        this.removeTransaction = this.removeTransaction.bind(this)
     }
 
-    handleChange(event) {
-        this.setState({[event.target.id]: event.target.value})
+    addTransaction(transaction) {
+        const id = this.state.transactions.length
+        this.setState(prevState => ({
+                transactions: [...prevState.transactions, {
+                    id: id,
+                    description: transaction.description,
+                    price: transaction.price
+                }]
+            })
+        )
+    }
+
+    removeTransaction(transactionId) {
+        let filteredArray = this.state.transactions.filter(transaction => transaction.id !== transactionId)
+        this.setState({transactions: filteredArray});
     }
 
     render() {
         const {transactions, sender, recipient} = this.state
-        const {mode} = this.props
 
         return (
             <Container>
-
                 <Row>
                     <Col className='mt-4'>
                         <Sender sender={sender}/>
@@ -75,14 +71,15 @@ class FacturePage extends Component {
                 </Row>
 
                 <Row>
-                    <Col className='mt-4 mb-4'>
+                    <Col className='mt-4 mb-2'>
                         <Heading number={1} date={'11-08-1988'}/>
                     </Col>
                 </Row>
-
                 <Row>
                     <Col>
-                        <TransactionTable transactions={transactions}/>
+                        <TransactionTable transactions={transactions}
+                                          addTransaction={(transaction) => this.addTransaction(transaction)}
+                                          removeTransaction={(transactionId) => this.removeTransaction(transactionId)}/>
                     </Col>
                 </Row>
 
