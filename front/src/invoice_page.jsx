@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Col, Container, Row } from 'reactstrap'
 import BankDetails from './bank_details'
-import FactureId from './invoice_id'
+import InvoiceId from './invoice_id'
 import Heading from './heading'
 import Recipient from './recipient'
 import Sender from './sender'
@@ -85,7 +85,7 @@ class InvoicePage extends Component {
 
                 <Row>
                     <Col className='mt-4'>
-                        <FactureId id={'90987635243564758'}/>
+                        <InvoiceId id={'90987635243564758'}/>
                     </Col>
                 </Row>
 

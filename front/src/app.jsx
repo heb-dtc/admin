@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Container, Nav, Navbar, NavbarBrand, NavItem, NavLink } from 'reactstrap'
 import InvoicePage from './invoice_page'
+import {generatePdfInvoice} from './pdf_generator'
 
 class App extends Component {
     constructor() {
@@ -14,11 +15,15 @@ class App extends Component {
                     <NavbarBrand>invoice-maker</NavbarBrand>
                     <Nav className="ml-auto" navbar>
                         <NavItem>
-                            <NavLink>print</NavLink>
+                            <NavLink onClick={() => {
+                                generatePdfInvoice(document.getElementById('printable'))
+                            }}>print</NavLink>
                         </NavItem>
                     </Nav>
                 </Navbar>
-                <InvoicePage />
+                <div id='printable'>
+                    <InvoicePage />
+                </div>
             </Container>
         )
     }

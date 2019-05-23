@@ -6,7 +6,7 @@ const Heading = ({number, date}) => {
     const EditableDate = contentEditable('span')
     return (
         <div className='text-black-50'>
-            Facture number #<EditableNumber value={number}/> - <EditableDate value={date}/>
+            Invoice number #<EditableNumber value={number}/> - <EditableDate value={date}/>
         </div>
     )
 }
